@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R]
+
+RewriteCond %{HTTP_HOST} !^www.motleydancecompany.com$ [NC]
+
+RewriteRule ^(.*)$ https://www.motleydancecompany.com/ [L,R=301]
